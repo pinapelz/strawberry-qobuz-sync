@@ -1,0 +1,24 @@
+[project]
+name = "qobuz-strawberry-sync"
+version = "1.0.0"
+description = "Sync Qobuz playlists into Strawberry Music Player's local SQLite database (strawberry.db)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31.0",
+]
+
+[project.scripts]
+qobuz-strawberry-sync = "qobuz_strawberry_sync.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["qobuz_strawberry_sync"]
